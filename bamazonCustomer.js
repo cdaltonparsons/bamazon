@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// cTable to remove index column, npm cTable
+// consider adding npm pacakage cTable to remove index column
 var connection = mysql.createConnection({
   host: "localhost",
   port: 8889,
