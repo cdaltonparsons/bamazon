@@ -1,1 +1,3 @@
-# bamazon
+This app functions similarly to an online storefront, think Amazon but on a miniature scale.  The app has two separate functions, a customer facing interface, and an inward facing interface for a hypothetical manager or employee.  The customer can choose items by unique ID, and purchase any number of them, so long as they are in stock.  The app will total up their cost, and track the inventory with each sale.  The manager app allows someone to search all products for those which have a low inventory (under 5 units), restock an item (setting the stock quantity to 50), or add new products for sale.
+
+The app utilizes two different NPM packages, mysql and inquirer, to both store data and to take in user prompts specifying what action to take.

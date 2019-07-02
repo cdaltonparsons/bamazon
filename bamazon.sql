@@ -25,4 +25,11 @@ VALUES ("old mixtape", "music", 3.28, 17),
 ("computer mouse", "electronics", 14.35, 9),
 ("Unicorn custome for small dogs", "pets", 9.99, 23);
 
+CREATE TABLE departments (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+overhead_costs INT NOT NULL,
+PRIMARY KEY (id)
+);
+
 SELECT * FROM products
