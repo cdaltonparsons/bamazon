@@ -45,7 +45,7 @@ function beginPrompt() {
           return;
       }
     });
-}
+};
 
 function viewProducts() {
   connection.query("SELECT * FROM products", function(err, response) {

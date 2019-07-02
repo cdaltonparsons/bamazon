@@ -83,15 +83,16 @@ function beginPrompt() {
                     var new_quantity =
                       results[0].stock_quantity -
                       parseInt(response.userQuantity);
+                    var sales_total = (results[0].price * parseFloat(response.userQuantity).toFixed(2))
                     connection.query(
                       "UPDATE products SET ? WHERE ?",
-                      [{ stock_quantity: new_quantity }, { id: results[0].id }],
+                      [{ stock_quantity: new_quantity, product_sales: results[0].product_sales + sales_total}, { id: results[0].id }],
                       function(err) {
+                        
                         if (err) throw err;
                         displayProducts();
                         console.log(
-                          `Your total is: $ ${(results[0].price *
-                            parseFloat(response.userQuantity)).toFixed(2)}`
+                          `Your total is: $ ${sales_total}`
                         );
                         beginPrompt();
                       }

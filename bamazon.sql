@@ -10,6 +10,7 @@ CREATE TABLE products (
     department_name VARCHAR(50) NULL,
     price DECIMAL(10,2) NOT NULL,
     stock_quantity INT NOT NULL,
+    product_sales DECIMAL (10,2) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -32,4 +33,13 @@ overhead_costs INT NOT NULL,
 PRIMARY KEY (id)
 );
 
-SELECT * FROM products
+INSERT INTO departments (name, overhead_costs)
+VALUES ("music", 650),
+("clothing", 800),
+("pets", 500),
+("homewares", 850),
+("electronics", 900);
+
+
+SELECT * FROM products;
+SELECT * FROM departments;
