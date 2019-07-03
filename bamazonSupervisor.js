@@ -39,7 +39,7 @@ function beginPrompt() {
 
 
 function salesByDept() {
-    connection.query("SELECT departments.name, departments.overhead_costs, products.product_sales, SUM(departments.overhead_costs - product_sales)profit FROM departments INNER JOIN products ON departments.name = products.department_name GROUP BY departments.name, departments.overhead_costs, products.product_sales", function (err, res) {
+    connection.query("SELECT departments.id, departments.name, departments.overhead_costs, SUM(products.product_sales) AS product_sales, SUM(product_sales) - departments.overhead_costs AS profit FROM products RIGHT JOIN departments ON departments.name = products.department_name GROUP BY departments.id, departments.name, departments.overhead_costs", function (err, res) {
         if(err) throw err;
         console.table(res);
         beginPrompt();
@@ -75,6 +75,7 @@ function newDepartment() {
         })
     })
 };
+
 
 function exit() {
     console.log("Disconnecting");
