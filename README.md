@@ -6,4 +6,4 @@ Customer Interface:
 
 On start up, the app will display a table with all available products, the price per product, and the available quantity.  Using the displayed ID, the user can select which ever product they would like, or they can type 'exit' to break out of the program.
 
-![GIF of customer interface](/Users/cdp/Desktop/code/bamazon/Screen Caps/Kapture 2019-07-03 at 9.29.55.gif)
+![GIF of customer interface](images/customer.gif)
