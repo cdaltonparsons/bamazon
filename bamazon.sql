@@ -10,6 +10,7 @@ CREATE TABLE products (
     department_name VARCHAR(50) NULL,
     price DECIMAL(10,2) NOT NULL,
     stock_quantity INT NOT NULL,
+    product_sales DECIMAL (10,2) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -25,4 +26,20 @@ VALUES ("old mixtape", "music", 3.28, 17),
 ("computer mouse", "electronics", 14.35, 9),
 ("Unicorn custome for small dogs", "pets", 9.99, 23);
 
-SELECT * FROM products
+CREATE TABLE departments (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+overhead_costs INT NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO departments (name, overhead_costs)
+VALUES ("music", 650),
+("clothing", 800),
+("pets", 500),
+("homewares", 850),
+("electronics", 900);
+
+
+SELECT * FROM products;
+SELECT * FROM departments;
